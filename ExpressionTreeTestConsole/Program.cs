@@ -13,6 +13,17 @@ using System.Reflection;
 
 namespace ExpressionTreeTestConsole
 {
+    /// <summary>
+    /// This is NOT a unit-test. The purpose of this app is to work toward expressions and assignment statements
+    /// that can be built from text formulas of the sort entered in the accompanying app MultiDimensionalSpreadsheet.
+    /// That app is currently limited by having to interpret each formula at runtime, on every invocation. 
+    /// Expression trees (System.Linq.Expressions 3.5) and statements (System.Linq.Expressions 4.0) offered
+    /// hope that the app could someday compile the formulas when they are entered, and invoke them with variable 
+    /// cell references each time they are needed.
+    /// This app IS a testbed for understanding expression-trees and assignment-statements 
+    /// with variable parameters and asignees, with an eye toward invoking them using variables
+    /// of my choosing at runtime in code.
+    /// </summary>
     class Program
     {
         //private static int _p = default(int);
