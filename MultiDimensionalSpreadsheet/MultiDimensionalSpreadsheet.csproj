@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3015E652-1936-4C92-ABD9-C73540409E2F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MultiDimensionalSpreadsheet</RootNamespace>
+    <AssemblyName>MultiDimensionalSpreadsheet</AssemblyName>
+    <StartupObject>MultiDimensionalSpreadsheet.Program</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <ApplicationIcon>images\MultiDimensionalSpreadsheet.ico</ApplicationIcon>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ModelView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModelView.Designer.cs">
+      <DependentUpon>ModelView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ModelViewModel.cs" />
+    <EmbeddedResource Include="ModelView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ModelView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <Content Include="appSettings.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Resources\Above.png" />
+    <Content Include="Resources\Below.png" />
+    <Content Include="Resources\Bottom.png" />
+    <Content Include="Resources\Copy.png" />
+    <Content Include="Resources\Delete.png" />
+    <Content Include="Resources\FastForward.png" />
+    <Content Include="Resources\FastRewind.png" />
+    <Content Include="Resources\Forward.png" />
+    <Content Include="Resources\MultiDimensionalSpreadsheet.ico" />
+    <Content Include="Resources\New.png" />
+    <Content Include="Resources\Open.png" />
+    <Content Include="Resources\Print.png" />
+    <Content Include="Resources\Properties.png" />
+    <Content Include="Resources\Rewind.png" />
+    <Content Include="Resources\Save.png" />
+    <Content Include="Resources\Top.png" />
+    <Content Include="settings\test.mdss">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Ssepan.Application\Ssepan.Application.csproj">
+      <Project>{C69040CF-5ACD-4F55-8540-49FB7C2A7AA2}</Project>
+      <Name>Ssepan.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Ssepan.Collections\Ssepan.Collections.csproj">
+      <Project>{07E139E8-739C-41C7-A53A-6AF3288B7B83}</Project>
+      <Name>Ssepan.Collections</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Ssepan.Io\Ssepan.Io.csproj">
+      <Project>{9EFE2EC6-F48E-4E4E-927F-068B54210E09}</Project>
+      <Name>Ssepan.Io</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Ssepan.Utility\Ssepan.Utility.csproj">
+      <Project>{9C11D8DD-E335-4FE3-AAE6-5C3B17732890}</Project>
+      <Name>Ssepan.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MultiDimensionalSpreadsheetLibrary\MultiDimensionalSpreadsheetLibrary.csproj">
+      <Project>{CFDD1B43-45CE-4FE5-B5EC-956221564B6E}</Project>
+      <Name>MultiDimensionalSpreadsheetLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\MultiDimensionalSpreadsheet.ico" />
+    <Content Include="License.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

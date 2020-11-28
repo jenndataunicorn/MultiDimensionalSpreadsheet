@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CFDD1B43-45CE-4FE5-B5EC-956221564B6E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MultiDimensionalSpreadsheetLibrary</RootNamespace>
+    <AssemblyName>MultiDimensionalSpreadsheetLibrary</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>images\MultiDimensionalSpreadsheet.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;debug </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Operation\OperationFunction.cs" />
+    <Compile Include="Operator\Functions\OperatorMax.cs" />
+    <Compile Include="Operator\Functions\OperatorMin.cs" />
+    <Compile Include="Operator\OperatorAdd.cs" />
+    <Compile Include="Sheet\Category.cs" />
+    <Compile Include="Sheet\CategoryItem.cs" />
+    <Compile Include="Sheet\FormulaExecutionContext.cs" />
+    <Compile Include="Operand\OperandReference.cs" />
+    <Compile Include="Operand\OperandOperation.cs" />
+    <Compile Include="Operand\OperandLiteral.cs" />
+    <Compile Include="Operation\IOperation.cs" />
+    <Compile Include="Operand\OperandBase.cs" />
+    <Compile Include="Operation\OperationBinary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Operator\OperatorAssignment.cs" />
+    <Compile Include="Operator\OperatorDivide.cs" />
+    <Compile Include="Operator\OperatorMultiply.cs" />
+    <Compile Include="Operator\OperatorSubtract.cs" />
+    <Compile Include="Sheet\DataGridViewHelper.cs" />
+    <Compile Include="Sheet\Formula.cs" />
+    <Compile Include="Operator\IOperator.cs" />
+    <Compile Include="MVC\MDSSController.cs" />
+    <Compile Include="MVC\MDSSModel.cs" />
+    <Compile Include="Operator\Functions\OperatorAbs.cs" />
+    <Compile Include="Operator\OperatorBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Operation\OperationBase.cs" />
+    <Compile Include="Operand\IOperand.cs" />
+    <Compile Include="MVC\Settings.cs" />
+    <Compile Include="Sheet\Sheet.cs" />
+    <Compile Include="Sheet\SheetCell.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Ssepan.Application\Ssepan.Application.csproj">
+      <Project>{C69040CF-5ACD-4F55-8540-49FB7C2A7AA2}</Project>
+      <Name>Ssepan.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Ssepan.Collections\Ssepan.Collections.csproj">
+      <Project>{07E139E8-739C-41C7-A53A-6AF3288B7B83}</Project>
+      <Name>Ssepan.Collections</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Ssepan.Utility\Ssepan.Utility.csproj">
+      <Project>{9C11D8DD-E335-4FE3-AAE6-5C3B17732890}</Project>
+      <Name>Ssepan.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\MultiDimensionalSpreadsheet.ico" />
+    <Content Include="readme.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Above.png" />
+    <Content Include="Resources\Below.png" />
+    <Content Include="Resources\Bottom.png" />
+    <Content Include="Resources\Copy.png" />
+    <Content Include="Resources\Delete.png" />
+    <Content Include="Resources\FastForward.png" />
+    <Content Include="Resources\FastRewind.png" />
+    <Content Include="Resources\Forward.png" />
+    <Content Include="Resources\MultiDimensionalSpreadsheet.ico" />
+    <Content Include="Resources\New.png" />
+    <Content Include="Resources\Open.png" />
+    <Content Include="Resources\Print.png" />
+    <Content Include="Resources\Properties.png" />
+    <Content Include="Resources\Rewind.png" />
+    <Content Include="Resources\Save.png" />
+    <Content Include="Resources\Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
