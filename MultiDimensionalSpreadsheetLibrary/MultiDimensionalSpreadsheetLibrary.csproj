@@ -109,10 +109,6 @@
       <Project>{07E139E8-739C-41C7-A53A-6AF3288B7B83}</Project>
       <Name>Ssepan.Collections</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Ssepan.Utility\Ssepan.Utility.csproj">
-      <Project>{9C11D8DD-E335-4FE3-AAE6-5C3B17732890}</Project>
-      <Name>Ssepan.Utility</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
