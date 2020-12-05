@@ -87,6 +87,15 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="data\0p14 - Copy.mdss" />
+    <None Include="data\0p14.mdss" />
+    <None Include="data\0p14_.mdss" />
+    <None Include="data\0p9.mdss" />
+    <None Include="data\0pt2.mdss" />
+    <None Include="data\0pt3.mdss" />
+    <None Include="data\0pt5.mdss" />
+    <None Include="data\0pt6.mdss" />
+    <None Include="data\0pt8.mdss" />
     <None Include="app.config" />
     <Content Include="appSettings.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
