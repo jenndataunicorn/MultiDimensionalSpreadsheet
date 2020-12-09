@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using Ssepan.Application.WinForms;
+using Ssepan.Application;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
@@ -30,7 +30,7 @@ using Ssepan.Application.WinForms;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("0.13.0.*")]
+[assembly: AssemblyVersion("0.14")]
 
 
 #region " Helper class to get information for the About form. "

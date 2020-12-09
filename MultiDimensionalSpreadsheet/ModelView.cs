@@ -10,8 +10,6 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Windows.Forms;
 using Ssepan.Application;
-using Ssepan.Application.WinForms;
-using Ssepan.Application.WinConsole;
 using Ssepan.Collections;
 using Ssepan.Io;
 using Ssepan.Utility;
