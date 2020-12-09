@@ -9,7 +9,6 @@ using System.Windows.Forms;
 using MultiDimensionalSpreadsheetLibrary;
 using MultiDimensionalSpreadsheetLibrary.UI;
 using Ssepan.Application;
-using Ssepan.Application.WinConsole;
 using Ssepan.Collections;
 using Ssepan.Utility;
 using System.Diagnostics;
