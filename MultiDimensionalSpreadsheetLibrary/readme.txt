@@ -71,6 +71,7 @@ Enhancements:
 ~TODO:make operands of T, where T is numeric; continue to use operand of Single for now
 
 0.14: (DEVELOPMENT)
+~update to Framework 4.8 and SDK-style .csproj format
 ~Fixed bug when renaming sheet or category. Changed ParentName to Parent object reference in CategoryItem and Formula, and changed Ssepan.Utility ObjectHelper to use DataContract serializer as an option. (Background: Renaming a sheet or category hangs program in call to GetCellsWhereAllSearchCategoryItemsMatchAnyInGivenCell() in IsApplicableFormula() in Formula.cs. The name in 'this.ParentName' still has the previous value. Child controls had name instead of parent reference.) 
 ~Also had to modify Ssepan.Utility.ObjectHelper.Clone() to optionally use DataContract, including circuular-reference awareness.
 ~Also had to fix circular reference when serializing DataContract. Added  'IsReference=true' to DataContract attribute on objects being serialized under Settings. 
