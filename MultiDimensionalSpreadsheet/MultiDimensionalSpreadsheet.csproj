@@ -4,7 +4,16 @@
     <TargetFramework>net48</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <ApplicationIcon>Resources\MultiDimensionalSpreadsheet.ico</ApplicationIcon>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="settings\test.mdss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="settings\test.mdss">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Ssepan.Application\Ssepan.Application.csproj">
       <Project>{C69040CF-5ACD-4F55-8540-49FB7C2A7AA2}</Project>

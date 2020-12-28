@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
 	<Product Id="*" Name="MultiDimensionalSpreadsheet" Language="1033" Version="0.14.0.0" Manufacturer="Stephen J Sepan" UpgradeCode="5e48b341-71ee-4783-beef-86ac53acc4c6">
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
@@ -37,6 +37,7 @@
     </DirectoryRef>
   </Fragment>
 
+
   <Fragment>
 		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
       <Component Id="MultiDimensionalSpreadsheet.exe">
@@ -50,6 +51,9 @@
       </Component>
       <Component Id="License.txt">
         <File Source="$(var.MultiDimensionalSpreadsheet.ProjectDir)\License.txt" />
+      </Component>
+      <Component Id="test.mdss">
+        <File Source="$(var.MultiDimensionalSpreadsheet.TargetDir)\settings\test.mdss" />
       </Component>
       <Component Id="MultiDimensionalSpreadsheetLibrary.dll">
         <File Source="$(var.MultiDimensionalSpreadsheetLibrary.TargetPath)" />
