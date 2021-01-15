@@ -6,11 +6,11 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
+using System.Diagnostics;
+using System.Reflection;
 using Ssepan.Application;
 using Ssepan.Collections;
 using Ssepan.Utility;
-using System.Diagnostics;
-using System.Reflection;
 
 namespace MultiDimensionalSpreadsheetLibrary
 {
@@ -20,6 +20,7 @@ namespace MultiDimensionalSpreadsheetLibrary
     [DataContract(IsReference = true)]
     [TypeConverter(typeof(ExpandableObjectConverter))]
     public class Formula :
+        SettingsComponentBase,
         IEquatable<Formula>,
         INotifyPropertyChanged
     {

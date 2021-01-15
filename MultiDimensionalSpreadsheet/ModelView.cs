@@ -83,7 +83,13 @@ namespace MultiDimensionalSpreadsheet
 
         #region PropertyChangedEventHandlerDelegate
         /// <summary>
-        /// Note: property changes update UI manually.
+        /// Note: model property changes update UI manually.
+        /// Note: handle settings property changes manually.
+        /// Note: because settings properties are a subset of the model 
+        ///  (every settings property should be in the model, 
+        ///  but not every model property is persisted to settings)
+        ///  it is decided that for now the settigns handler will 
+        ///  invoke the model handler as well.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -95,6 +101,7 @@ namespace MultiDimensionalSpreadsheet
         {
             try
             {
+                #region Model
                 //TODO:"Settings.Sheets[#].Name"?
                 if (e.PropertyName == "IsChanged")
                 {
@@ -163,6 +170,15 @@ namespace MultiDimensionalSpreadsheet
                     StatusBarDirtyMessage.Image = ViewModel.DirtyIconImage;
                 }
                 //use if properties cannot be databound
+                #endregion Model
+
+                #region Settings
+                if (e.PropertyName == "Dirty")
+                {
+                    //apply settings that don't have databindings
+                    ViewModel.DirtyIconIsVisible = (SettingsController<Settings>.Settings.Dirty);
+                }
+                #endregion Settings
             }
             catch (Exception ex)
             {
@@ -1639,8 +1655,13 @@ namespace MultiDimensionalSpreadsheet
         {
             try
             {
-                //subscribe view to model notifications
-                ModelController<MDSSModel>.Model.PropertyChanged += PropertyChangedEventHandlerDelegate;
+                //tell controller how model should notify view about non-persisted properties AND including model properties that may be part of settings
+                ModelController<MDSSModel>.DefaultHandler = PropertyChangedEventHandlerDelegate;
+
+                //tell controller how settings should notify view about persisted properties
+                SettingsController<Settings>.DefaultHandler = PropertyChangedEventHandlerDelegate;
+
+                InitModelAndSettings();
 
                 FileDialogInfo settingsFileDialogInfo =
                     new FileDialogInfo
@@ -1648,9 +1669,9 @@ namespace MultiDimensionalSpreadsheet
                         SettingsController<Settings>.FILE_NEW,
                         null,
                         null,
-                        /*SettingsController<Settings>.*/Settings.FileTypeExtension,
-                        /*SettingsController<Settings>.*/Settings.FileTypeDescription,
-                        /*SettingsController<Settings>.*/Settings.FileTypeName,
+                        Settings.FileTypeExtension,
+                        Settings.FileTypeDescription,
+                        Settings.FileTypeName,
                         new String[] 
                         { 
                             "XML files (*.xml)|*.xml", 
@@ -1688,24 +1709,13 @@ namespace MultiDimensionalSpreadsheet
                             { "Rewind", Resources.Rewind }, 
                             { "Save", Resources.Save },
                             { "Top", Resources.Top }//, 
-                            //{ "BoxEmpty", Resources.BoxEmpty }, 
-                            //{ "BoxFull", Resources.BoxFull }, 
-                            //{ "Download", Resources.Download }, 
-                            //{ "Upload", Resources.Upload }, 
-                            //{ "Package", Resources.Package }, 
-                            //{ "List", Resources.List }, 
-                            //{ "ListSplitAbove", Resources.ListSplitAbove }, 
-                            //{ "ListSplitBelow", Resources.ListSplitBelow }, 
-                            //{ "Network", Resources.Network }, 
-                            //{ "Scan", Resources.Scan }, 
-                            //{ "Search", Resources.Search }, 
-                            //{ "RotateCCW", Resources.RotateCCW }, 
-                            //{ "RotateCW", Resources.RotateCW } 
                         },
                         settingsFileDialogInfo,
                         this
                     )
                 );
+
+                //select a viewmodel by view name
                 ViewModel = ViewModelController<Bitmap, ModelViewModel>.ViewModel[ViewName];
 
                 BindFormUi();
@@ -1744,6 +1754,20 @@ namespace MultiDimensionalSpreadsheet
                     ViewModel.ErrorMessage = ex.Message;
                 }
                 Log.Write(ex, MethodBase.GetCurrentMethod(), EventLogEntryType.Error);
+            }
+        }
+
+        protected void InitModelAndSettings()
+        {
+            //create Settings before first use by Model
+            if (SettingsController<Settings>.Settings == null)
+            {
+                SettingsController<Settings>.New();
+            }
+            //Model properties rely on Settings, so don't call Refresh before this is run.
+            if (ModelController<MDSSModel>.Model == null)
+            {
+                ModelController<MDSSModel>.New();
             }
         }
 

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
-using Ssepan.Collections;
-using Ssepan.Utility;
 using System.Diagnostics;
 using System.Reflection;
+using Ssepan.Application;
+using Ssepan.Collections;
+using Ssepan.Utility;
 
 namespace MultiDimensionalSpreadsheetLibrary
 {
@@ -20,6 +21,7 @@ namespace MultiDimensionalSpreadsheetLibrary
     [KnownType(typeof(Category))]
     [TypeConverter(typeof(ExpandableObjectConverter))]
     public class Category :
+        SettingsComponentBase,
         IDisposable,
         IEquatable<Category>,
         INotifyPropertyChanged

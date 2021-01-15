@@ -15,8 +15,7 @@ namespace MultiDimensionalSpreadsheetLibrary
     /// <summary>
     /// run-time model; relies on settings
     /// </summary>
-    //[DefaultPropertyAttribute("UserName")]
-    //[Serializable]
+    //[DefaultPropertyAttribute("SomePropertyName")]
     [TypeConverter(typeof(ExpandableObjectConverter))]
     public class MDSSModel :
         ModelBase
@@ -41,7 +40,7 @@ namespace MultiDimensionalSpreadsheetLibrary
         /// </summary>
         /// <param name="anotherSettings"></param>
         /// <returns></returns>
-        public override Boolean Equals(IModel other)
+        public override Boolean Equals(IModelComponent other)
         {
             Boolean returnValue = default(Boolean);
             MDSSModel otherModel = default(MDSSModel);
@@ -117,6 +116,17 @@ namespace MultiDimensionalSpreadsheetLibrary
         #endregion AddingNew handlers
 
         #region Properties
+        private String[] _Args = default(String[]);
+        public String[] Args
+        {
+            get { return _Args; }
+            set
+            {
+                _Args = value;
+                OnPropertyChanged("Args");
+            }
+        }
+
 
         public EquatableBindingList<Sheet> Sheets
         {

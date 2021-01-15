@@ -4,10 +4,11 @@ using System.ComponentModel;
 //using System.Linq;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
-using Ssepan.Collections;
-using Ssepan.Utility;
 using System.Diagnostics;
 using System.Reflection;
+using Ssepan.Application;
+using Ssepan.Collections;
+using Ssepan.Utility;
 
 namespace MultiDimensionalSpreadsheetLibrary
 {
@@ -18,6 +19,7 @@ namespace MultiDimensionalSpreadsheetLibrary
     [DataContract(IsReference = true)]
     [TypeConverter(typeof(ExpandableObjectConverter))]
     public class SheetCell :
+        SettingsComponentBase,
         IDisposable,
         IEquatable<SheetCell>,
         INotifyPropertyChanged

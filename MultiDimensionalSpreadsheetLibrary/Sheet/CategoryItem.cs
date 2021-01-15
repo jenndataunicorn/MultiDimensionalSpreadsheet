@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
-using Ssepan.Utility;
 using System.Diagnostics;
 using System.Reflection;
+using Ssepan.Application;
+using Ssepan.Utility;
 
 namespace MultiDimensionalSpreadsheetLibrary
 {
@@ -16,6 +17,7 @@ namespace MultiDimensionalSpreadsheetLibrary
     [DataContract(IsReference = true)]
     [TypeConverter(typeof(ExpandableObjectConverter))]
     public class CategoryItem :
+        SettingsComponentBase,
         IEquatable<CategoryItem>,
         INotifyPropertyChanged
     {

@@ -160,7 +160,7 @@ namespace MultiDimensionalSpreadsheetLibrary
                     {
                         returnValue = true;
                     }
-                    else if (!_Sheets.Equals(__Sheets))
+                    else if (_Sheets.Count != __Sheets.Count) //(!_Sheets.Equals(__Sheets))//clooning via DataContract ser-deser resulting in unique items?
                     {
                         returnValue = true;
                     }
@@ -260,9 +260,11 @@ namespace MultiDimensionalSpreadsheetLibrary
         {
             try
             {
-                __Sheets = ObjectHelper.Clone<EquatableBindingList<Sheet>>(_Sheets, Ssepan.Utility.SerializationFormat.DataContract);
                 __Version = _Version;
+                __Sheets = ObjectHelper.Clone<EquatableBindingList<Sheet>>(_Sheets, Ssepan.Utility.SerializationFormat.DataContract);
 
+                //DEBUG:(breaks Dirty flag)
+                //force Dirty to False in sheets Equal comparison 
                 base.Sync();
 
                 //Note:where we have cloned collections; the collection comparison will never find the orignla items in the cloned collection if it is looking at identity vs content--SJS
