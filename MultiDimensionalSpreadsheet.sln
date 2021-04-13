@@ -21,6 +21,8 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MultiDimensionalSpreadsheet
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ssepan.Patterns", "..\Ssepan.Patterns\Ssepan.Patterns.csproj", "{02B288FD-2642-4A7F-96E0-54031FA137F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpressionEvaluatorTestConsole", "ExpressionEvaluatorTestConsole\ExpressionEvaluatorTestConsole.csproj", "{1850635F-E104-49FA-934A-E434F3CAB52B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{02B288FD-2642-4A7F-96E0-54031FA137F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02B288FD-2642-4A7F-96E0-54031FA137F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02B288FD-2642-4A7F-96E0-54031FA137F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1850635F-E104-49FA-934A-E434F3CAB52B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1850635F-E104-49FA-934A-E434F3CAB52B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1850635F-E104-49FA-934A-E434F3CAB52B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1850635F-E104-49FA-934A-E434F3CAB52B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

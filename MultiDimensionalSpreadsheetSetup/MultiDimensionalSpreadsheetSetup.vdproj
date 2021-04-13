@@ -612,7 +612,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:MultiDimensionalSpreadsheet"
         "ProductCode" = "8:{B3A73567-D4D7-4565-BB22-E02E72FD5B72}"
-        "PackageCode" = "8:{1F0538A2-9C68-460D-84FF-1DD963DA6628}"
+        "PackageCode" = "8:{50C968A5-BA2A-47F0-AD96-5DAF1ABE6203}"
         "UpgradeCode" = "8:{7951449B-0770-421C-8EC2-ADF8860FD11C}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
