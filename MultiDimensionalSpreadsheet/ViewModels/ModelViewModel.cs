@@ -10,11 +10,14 @@ using System.Text;
 using System.Windows.Forms;
 using Ssepan.Utility;
 using Ssepan.Application;
+using Ssepan.Application.MVC;
+using Ssepan.Application.WinForms;
 using Ssepan.Io;
 using MultiDimensionalSpreadsheetLibrary;
+using MultiDimensionalSpreadsheetLibrary.MVC;
 //using MultiDimensionalSpreadsheetLibrary.Properties;
 
-namespace MultiDimensionalSpreadsheet
+namespace MultiDimensionalSpreadsheet.ViewModels
 {
     /// <summary>
     /// Note: this class can subclass the base without type parameters.

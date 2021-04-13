@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Windows.Forms;
 using MultiDimensionalSpreadsheetLibrary;
 using Ssepan.Application;
+using Ssepan.Application.WinConsole;
 using Ssepan.Utility;
 
 namespace MultiDimensionalSpreadsheet

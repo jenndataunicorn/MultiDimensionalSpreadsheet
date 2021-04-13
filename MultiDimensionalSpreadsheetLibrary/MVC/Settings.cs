@@ -10,7 +10,7 @@ using Ssepan.Application;
 using Ssepan.Collections;
 using Ssepan.Utility;
 
-namespace MultiDimensionalSpreadsheetLibrary
+namespace MultiDimensionalSpreadsheetLibrary.MVC
 {
 	/// <summary>
 	/// Summary description for Settings.

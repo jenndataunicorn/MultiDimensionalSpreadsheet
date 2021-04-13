@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using Ssepan.Application;
+using Ssepan.Application.MVC;
 using Ssepan.Collections;
 using Ssepan.Utility;
 using System.Diagnostics;
 using System.Reflection;
 
-namespace MultiDimensionalSpreadsheetLibrary
+namespace MultiDimensionalSpreadsheetLibrary.MVC
 {
     /// <summary>
     /// This is the MVC Controller

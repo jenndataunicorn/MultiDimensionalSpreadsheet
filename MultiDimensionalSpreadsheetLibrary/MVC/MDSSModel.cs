@@ -8,9 +8,11 @@ using System.Text;
 using Ssepan.Application;
 using Ssepan.Collections;
 using System.Reflection;
+using Ssepan.Application;
+using Ssepan.Application.MVC;
 using Ssepan.Utility;
 
-namespace MultiDimensionalSpreadsheetLibrary
+namespace MultiDimensionalSpreadsheetLibrary.MVC
 {
     /// <summary>
     /// run-time model; relies on settings
